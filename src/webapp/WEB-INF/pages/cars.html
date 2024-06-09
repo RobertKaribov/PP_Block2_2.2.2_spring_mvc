@@ -1,28 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cars</title>
+    <title>Cars Page</title>
 </head>
 <body>
-<h1>List of Cars</h1> 
-<table>
-    <thead>
+<h1>List of Cars</h1>
+<table border="1">
     <tr>
         <th>Brand</th>
         <th>Model</th>
-        <th>Color</th>
+        <th>Year</th>
     </tr>
-    </thead>
-    <tbody>
-    <!-- Loop through the list of cars and display each car -->
+    <!-- Используем Thymeleaf для отображения списка машин -->
     <tr th:each="car : ${cars}">
         <td th:text="${car.brand}"></td>
         <td th:text="${car.model}"></td>
-        <td th:text="${car.color}"></td>
+        <td th:text="${car.year}"></td>
     </tr>
-    </tbody>
 </table>
 </body>
 </html>
