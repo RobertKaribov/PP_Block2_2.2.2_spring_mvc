@@ -19,7 +19,7 @@ public class CarServiceImpl implements CarService {
     }
 
     public List<Car> getCarsByCount(Integer count) {
-        if (count > 5) {
+        if (count == null || count >= 5) {
             return cars;
         }
         return cars.subList(0, count);
